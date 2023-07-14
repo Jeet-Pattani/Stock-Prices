@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MONEY Protocol</title>
+  <link rel="stylesheet" href="css/style1.css">
+  <script src="https://kit.fontawesome.com/a81f64a541.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous"
+    defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider-extensions.min.js"
+  crossorigin="anonymous" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet"
+    crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!-- Resources -->
+</head>
+
+<body>
+  <header>
+    <nav class="nav" id="nav-bar">
+      <a href="#home" id="logo">MONEY Protocol</a>
+      <i class="fas fa-bars" id="ham-menu"></i>
+
+      <ul id="nav-bar">
+        <li>
+          <a href="#home">News</a>
+        </li>
+        <li>
+          <a href="#about">Commodities & Exchange</a>
+        </li>
+        <li>
+          <a href="#services">About</a>
+        </li>
+        <li>
+          <a href="#team">IPO Corner</a>
+        </li>
+      </ul>
+      <div class="regis">
+        <a href="#" class="cta">Signup</a>
+      </div>
+
+    </nav>
+  </header>
+  <section id="hero">
+    <div class="partition">
+      <!-- <video class="video" src="videos/hero1.mp4" autoplay muted loop></video> -->
+      <img class="video" src="poster/poster1.png" alt="">
+    </div>
+    <div class="mid-partition">
+      <!-- <div class="mid-section"> -->
+      <div class="upper">
+        <!-- <video class="video" src="videos/hero2.mp4" autoplay muted loop></video> -->
+        <img class="video" src="poster/poster2.png" alt="">
+      </div>
+      <div class="lower">
+        <!-- <video class="video" src="videos/hero3_2.webm" autoplay muted loop></video> -->
+        <img class="video" src="poster/poster3.png" alt="">
+      </div>
+      <!-- </div> -->
+    </div>
+    <div class="partition">
+      <!-- <video class="video" src="videos/hero7.webm" autoplay muted loop></video> -->
+      <img class="video" src="poster/poster5.png" alt="">
+    </div>
+    <div class="overlay"></div>
+    <div class="hero_logo">
+      <img src="images/logo.webp" alt="">
+    </div>
+  </section>
+  <div class="ticker-wrapper">
+    <div class="ticker-container">
+      <div class="stocks-ticker" id="marquee-container"></div>
+    </div>
+  </div>
+  
+  <div class="indices-box">
+    <div class="swiffy-slider slider-nav-mousedrag slider-nav-animation slider-nav-animation-fadein">
+      <div class="slider-container" id="index-container">
+        <!-- <div class="index-card">
+          <div class="iname">NIFTY 50</div>
+          <div class="data1"><span class="iprice">18000.56</span><span class="istatus"><i
+                class="fa-solid fa-caret-up"></i></span></div>
+          <div class="data2"><span class="ichng">423.15</span><span class="iper">(2.5%)</span></div>
+        </div>  -->
+      </div>
+    </div>
+  </div>
+
+
+  <div class="intro-banner">
+    <div class="banner-box">
+      <h1>MONEY Protocol</h1>
+      <h4>FUNDS. FINANCE. MONEY. MARKET.</h4>
+      <p>Welcome to MONEY Protocol, your trusted investment advisory partner. We simplify the complexities of investing,
+        offering tailored strategies to help you reach your financial goals. Our experienced advisors provide
+        personalized guidance, considering your risk tolerance and financial objectives. Join us today to unlock the
+        potential of your wealth.</p>
+    </div>
+  </div>
+  <section class="portfolio">
+    <div class="headingWrapper">
+      <span class="sub-heading">
+        PORTFOLIO
+      </span>
+      <span class="small-text">
+        by Experts
+      </span>
+    </div>
+    <div class="chartContainer">
+      <!-- <div id="chartdiv"></div> -->
+    </div>
+
+  </section>
+
+
+  <section class="portfolio" style="height:100vh;display: grid;place-items: center;">
+    <h1 style="text-align: center;color: #fff;font-size: 5rem;">TIPS and Today's PICK</h1>
+  </section>
+
+  <section class="portfolio" style="height:30vh;display: grid;place-items: center;background-color: black;">
+    <h1 style="text-align: center;color: #fff;font-size: 5rem;">show steps to register or show how MONEY Protocol works
+    </h1>
+  </section>
+  <section class="portfolio" style="height:100vh;display: grid;place-items: center;">
+    <h1 style="text-align: center;color: #fff;font-size: 5rem;">News Cards</h1>
+  </section>
+  <section class="portfolio" style="height:100vh;display: grid;place-items: center;">
+    <h1 style="text-align: center;color: #fff;font-size: 5rem;">IPO Table</h1>
+  </section>
+  <section class="portfolio" style="height:100vh;display: grid;place-items: center;">
+    <h1 style="text-align: center;color: #fff;font-size: 5rem;">Call To Action</h1>
+  </section>
+  <section class="portfolio" style="height:100vh;display: grid;place-items: center;">
+    <h1 style="text-align: center;color: #fff;font-size: 5rem;">Youtube Videos</h1>
+  </section>
+
+  <footer>
+    <div class="portfolio" style="height:30vh;display: grid;place-items: center;background-color: black;">
+      <h1 style="text-align: center;color: #fff;font-size: 5rem;">Footer</h1>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js"
+    integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous" async></script>
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  <!-- js to implement IntersectionObserver -->
+  <script>
+
+    const navbar = document.querySelector(".nav");
+    const heroSection = document.querySelector("#hero");
+
+    var heroSectionOptions = {
+      rootMargin: "0px 0px 0px 0px",
+    };
+    const heroSectionObserver =
+      new IntersectionObserver(function (entries, navbar) {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) {
+            // Navbar styling when the page is scrolled             
+            $("header").css("opacity", "1");
+            $("header").css("transition", "all 0.3s ease-in-out");
+            $("header").css("top", "0rem");
+            $(".nav").css("transition", "all 0.3s ease-in-out");
+            $(".nav").css("opacity", "1");
+            $(".nav").css("top", "2.6rem");
+            $(".ticker-container").css("opacity", "1");
+            $(".indices-box").css("left", "3rem");
+          }
+          else {
+            // Navbar styling when it is back on hero section   
+            $("header").css("opacity", "0");
+            $("header").css("transition", "all 0.3s ease-in-out");
+            $("header").css("top", "-5rem");
+            $(".nav").css("transition", "all 0.3s ease-in-out");
+            $(".nav").css("opacity", "0");
+            $(".ticker-container").css("opacity", "0");
+            $(".indices-box").css("left", "-100%");
+          }
+
+        })
+      }, heroSectionOptions);
+
+    heroSectionObserver.observe(heroSection);
+
+  </script>
+  <!-- js for responsive nav -->
+  <script>
+    let hamMenuIcon = document.getElementById("ham-menu");
+    let navBar = document.getElementById("nav-bar");
+    let navLinks = navBar.querySelectorAll("li");
+
+    hamMenuIcon.addEventListener("click", () => {
+      navBar.classList.toggle("active");
+      hamMenuIcon.classList.toggle("fa-times");
+    });
+    navLinks.forEach((navLinks) => {
+      navLinks.addEventListener("click", () => {
+        navBar.classList.remove("active");
+        hamMenuIcon.classList.toggle("fa-times");
+      });
+    });
+  </script>
+
+  <!-- js to fetch live stock prices -->
+  <script src="js/fetchPrices.min.js"></script>
+</body>
+
+</html>

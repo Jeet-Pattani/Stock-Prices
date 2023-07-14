@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stock Prices</title>
+</head>
+<body>
+  <h1>Stock Prices</h1>
+  <table id="data-table-body"></table>
+
+  <script>
+    // Map to store tokenID to tokenName mapping
+    const tokenMapping = {
+      '26000': 'NIFTY-50',
+      '99926009': 'NIFTY BANK',
+      '99926011': 'NIFTY MIDCAP 100',
+      '99926032': 'NIFTY SMALLCAP 100',
+      '99926013': 'NIFTY NEXT 50',
+      '99926037': 'NIFTY FINANCIAL SERVICES',
+      '99926012': 'NIFTY 100',
+      '99926033': 'NIFTY 200',
+      '99926004': 'NIFTY 500',
+      '99919000': 'SENSEX',
+      '2885': 'RELIANCE',
+      '3045': 'SBIN',
+      '3432': 'TATACONSUM',
+      '11723': 'JSWSTEEL',
+      '3499': 'TATASTEEL',
+      '11630': 'NTPC',
+      '14977': 'POWERGRID',
+      '10604': 'BHARTIARTL',
+      '16675': 'BAJAFINSV',
+      '317': 'BAJFINANCE',
+      '1348': 'HEROMOTOCO',
+      '5258': 'INDUSINDBK',
+      '1333': 'HDFCBANK',
+      '1922': 'KOTAKBANK',
+      '11536': 'TCS',
+      '1594': 'INFY',
+      '1363': 'HINDALCO',
+      '17388': 'ADANIPOWER',
+      '236': 'ASIANPAINT',
+      '3506': 'TITAN',
+      '25780': 'APLAPOLLO',
+      '17963': 'NESTLEIND',
+      '1660': 'ITC',
+      '2475': 'ONGC',
+      '3351': 'SUNPHARMA',
+      '1232': 'GRASIM',
+      '10940': 'DIVISLAB',
+      '881': 'DRREDDY',
+      '7229': 'HCLTECH',
+      '3787': 'WIPRO',
+      '547': 'BRITANNIA',
+      '694': 'CIPLA',
+      '910': 'EICHERMOT',
+      '10999': 'MARUTI',
+      '14937': 'MAHINDCIE',
+      '21676': 'HINDMOTORS',
+      '526': 'BPCL',
+      '20374': 'COALINDIA',
+      '13538': 'TECHM',
+      '1394': 'HINDUNILVR',
+      '3563': 'ADANIGREEN',
+      '25': 'ADANIENT',
+      '5097': 'ZOMATO',
+      '2664': 'PIDILITIND',
+      '9819': 'HAVELLS',
+      '772': 'DABUR',
+      '3103': 'SHREECEM',
+      '13611': 'IRCTC',
+      '9480': 'LICI',
+      '4204': 'MOTHERSON',
+      '305': 'BAJAJHLDNG',
+      '2181': 'BOSCHLTD',
+    };
+
+    // Function to fetch the latest data from the API endpoint
+    async function fetchLatestData() {
+      try {
+        const response = await fetch('http://localhost:3000/api/latest');
+        const data = await response.json();
+
+        // Clear the existing data in the table
+        const tableBody = document.getElementById('data-table-body');
+        tableBody.innerHTML = '';
+
+        // Iterate over the received data
+        for (const tokenID in data) {
+          if (Object.hasOwnProperty.call(data, tokenID)) {
+            const item = data[tokenID];
+
+            // Retrieve the token name from the tokenMapping
+            const tokenName = tokenMapping[tokenID];
+
+            // Create table row and cells
+            const row = document.createElement('tr');
+
+            const tokenNameCell = document.createElement('td');
+            tokenNameCell.textContent = tokenName;
+
+            const ltpCell = document.createElement('td');
+            ltpCell.textContent = item.ltp;
+
+            // Append cells to the row
+            row.appendChild(tokenNameCell);
+            row.appendChild(ltpCell);
+
+            // Append the row to the table body
+            tableBody.appendChild(row);
+          }
+        }
+      } catch (error) {
+        console.log('Error fetching data:', error);
+      }
+    }
+
+    // Call the fetchLatestData function to initially populate the table
+    fetchLatestData();
+
+    // Fetch the latest data every 5 seconds
+    setInterval(fetchLatestData, 5000);
+  </script>
+  <!-- <script>
+// Function to fetch the latest data from the API endpoint
+async function fetchLatestData() {
+  try {
+    const response = await fetch('http://localhost:3000/api/latest');
+    const data = await response.json();
+    
+    // Clear the existing data in the table
+    const tableBody = document.getElementById('data-table-body');
+    tableBody.innerHTML = '';
+    
+    // Iterate over the received data and populate the table rows
+    data.forEach((item) => {
+      const row = document.createElement('tr');
+      
+      const tokenNameCell = document.createElement('td');
+      tokenNameCell.textContent = item.tokenName;
+      
+      const ltpCell = document.createElement('td');
+      ltpCell.textContent = item.ltp;
+      
+      row.appendChild(tokenNameCell);
+      row.appendChild(ltpCell);
+      
+      tableBody.appendChild(row);
+    });
+  } catch (error) {
+    console.log('Error fetching data:', error);
+  }
+}
+
+// Call the fetchLatestData function to initially populate the table
+fetchLatestData();
+
+// Fetch the latest data every 5 seconds
+setInterval(fetchLatestData, 5000);
+
+  </script> -->
+</body>
+</html>
